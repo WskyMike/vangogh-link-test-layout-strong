@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подбор попутчиков</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <script type="module" crossorigin src="/vangogh-link-test-layout-strong/assets/index-xh2Wd2Fz.js"></script>
+  <link rel="stylesheet" crossorigin href="/vangogh-link-test-layout-strong/assets/index-Cqg7Y6aU.css">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <section class="travelers" id="travelers">
+        <!-- traveler-template- -->
+      </section>
+      <div id="filter-root">
+        <!-- filter-template- -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Шаблон карточки -->
+  <!-- TEMPLATE DESKTOP -->
+  <template id="traveler-template-desktop">
+    <div class="traveler">
+      <div class="traveler__photo">
+        <img class="traveler__photo-img" src="" alt="">
+      </div>
+      <div class="traveler__info">
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="traveler__top-row">
+          <div class="traveler__identity">
+            <h2 class="traveler__name"></h2>
+            <span class="traveler__tags"></span>
+          </div>
+          <div class="traveler__destinations"></div>
+        </div>
+        <!-- НИЖНИЙ РЯД -->
+        <div class="traveler__bottom-row">
+          <div class="traveler__bottom-left">
+            <button type="button" class="traveler__invite-button">ПОЗВАТЬ!</button>
+            <div class="traveler__likes">
+              <button class="traveler__likes-button"></button>
+              <span class="traveler__likes-count"></span>
+            </div>
+          </div>
+
+          <div class="traveler__bottom-right">
+            <div class="traveler__transport">
+              <span class="traveler__transport-icon" data-type="plane" title="plane">
+                <svg>
+                  <use xlink:href="#icon-plane"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="car" title="car">
+                <svg>
+                  <use xlink:href="#icon-car"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="bike" title="bike">
+                <svg>
+                  <use xlink:href="#icon-bike"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="walk" title="walk">
+                <svg>
+                  <use xlink:href="#icon-walk"></use>
+                </svg>
+              </span>
+            </div>
+            <img class="traveler__level" alt="Уровень путешественника">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- TEMPLATE TABLET -->
+  <template id="traveler-template-tablet">
+    <div class="traveler traveler--tablet">
+      <div class="traveler__top-wrapper">
+        <div class="traveler__photo">
+          <img class="traveler__photo-img" src="" alt="">
+        </div>
+        <div class="traveler__info traveler__info--tablet">
+          <div class="traveler__identity">
+            <h2 class="traveler__name"></h2>
+            <span class="traveler__tags"></span>
+          </div>
+          <div class="traveler__transport-level">
+            <div class="traveler__transport">
+              <span class="traveler__transport-icon" data-type="plane" title="plane">
+                <svg>
+                  <use xlink:href="#icon-plane"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="car" title="car">
+                <svg>
+                  <use xlink:href="#icon-car"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="bike" title="bike">
+                <svg>
+                  <use xlink:href="#icon-bike"></use>
+                </svg>
+              </span>
+              <span class="traveler__transport-icon" data-type="walk" title="walk">
+                <svg>
+                  <use xlink:href="#icon-walk"></use>
+                </svg>
+              </span>
+            </div>
+            <img class="traveler__level" alt="Уровень путешественника">
+          </div>
+          <div class="traveler__invite-row">
+            <button type="button" class="traveler__invite-button">ПОЗВАТЬ!</button>
+            <div class="traveler__likes">
+              <button class="traveler__likes-button"></button>
+              <span class="traveler__likes-count"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="traveler__destinations-block">
+        <div class="traveler__destinations-divider">
+          <span class="traveler__destinations-title">хочет посетить:</span>
+        </div>
+        <div class="traveler__destinations"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- TEMPLATE MOBILE -->
+  <template id="traveler-template-mobile">
+    <div class="traveler traveler--mobile">
+
+      <div class="traveler__top-row">
+        <div class="traveler__photo">
+          <img class="traveler__photo-img" src="" alt="">
+          <div class="traveler__likes">
+            <button class="traveler__likes-button"></button>
+            <span class="traveler__likes-count"></span>
+          </div>
+        </div>
+        <h2 class="traveler__name"></h2>
+      </div>
+
+      <div class="traveler__identity">
+        <span class="traveler__tags"></span>
+      </div>
+
+      <div class="traveler__destinations-block">
+        <div class="traveler__destinations-divider">
+          <span class="traveler__destinations-title">хочет посетить:</span>
+        </div>
+        <div class="traveler__destinations"></div>
+      </div>
+
+      <div class="traveler__transport-level-block">
+        <div class="traveler__transport-level-divider">
+          <span class="traveler__transport-title">транспорт:</span>
+          <span class="traveler__transport-divider-line"></span>
+          <span class="traveler__level-title">левел:</span>
+        </div>
+        <div class="traveler__transport-level-wrapper">
+          <div class="traveler__transport">
+            <div class="traveler__transport-option" data-type="plane" title="plane">
+              <svg class="traveler__transport-icon">
+                <use xlink:href="#icon-plane"></use>
+              </svg>
+            </div>
+            <div class="traveler__transport-option" data-type="car" title="car">
+              <svg class="traveler__transport-icon">
+                <use xlink:href="#icon-car"></use>
+              </svg>
+            </div>
+            <div class="traveler__transport-option" data-type="bike" title="bike">
+              <svg class="traveler__transport-icon">
+                <use xlink:href="#icon-bike"></use>
+              </svg>
+            </div>
+            <div class="traveler__transport-option" data-type="walk" title="walk">
+              <svg class="traveler__transport-icon">
+                <use xlink:href="#icon-walk"></use>
+              </svg>
+            </div>
+          </div>
+          <img class="traveler__level" alt="Уровень путешественника">
+        </div>
+      </div>
+
+      <div class="traveler__invite-row">
+        <button type="button" class="traveler__invite-button">ПОЗВАТЬ!</button>
+      </div>
+
+    </div>
+  </template>
+
+  <!-- Шаблон фильтр -->
+  <!-- TEMPLATE DESKTOP -->
+  <template id="filter-template-desktop">
+    <aside class="filter">
+      <div class="filter__block">
+        <div class="filter__title">Подберите идеального попутчика</div>
+
+        <div class="filter__section">
+          <div class="filter__section-title">ХОББИ</div>
+          <div class="filter__dropdown-content">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="hobby" value="sport" checked>
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Спортзал</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="hobby" value="hookah">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Кальян</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="hobby" value="sofa">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Диван</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter__section">
+          <div class="filter__section-title">МУЗЫКА</div>
+          <div class="filter__dropdown-content">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="music" value="rock" checked>
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Тяжелый рок</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="music" value="rap">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Русский рэп</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="music" value="eurodance">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Евроденс</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter__section">
+          <div class="filter__section-title">ЕДА</div>
+          <div class="filter__dropdown-content">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="food" value="meat" checked>
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Мясоед</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="food" value="pp">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Сидит на ПП</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="food" value="vegan">
+              <span class="checkbox__checkmark"></span>
+              <span class="checkbox__label">Веган-сыроед</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter__section">
+          <div class="filter__section-title">ТРАНСПОРТ</div>
+          <div class="filter__dropdown-content">
+            <div class="filter__transport-options">
+              <div class="filter__transport-option selected" data-type="plane">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-plane"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="car">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-car"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="bike">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-bike"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="walk">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-walk"></use>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="filter__section">
+          <div class="filter__section-title">ЛЕВЕЛ</div>
+          <div class="filter__dropdown-content">
+            <div class="filter__range-row">
+              <input type="number" id="levelMinInput" min="0" max="100" value="30" class="filter__range-input">
+              <span class="filter__range-separator">—</span>
+              <input type="number" id="levelMaxInput" min="0" max="100" value="100" class="filter__range-input">
+            </div>
+            <div id="levelSlider"></div>
+          </div>
+        </div>
+
+        <button class="filter__button" type="button">ПОКАЗАТЬ</button>
+      </div>
+    </aside>
+  </template>
+
+  <!-- TEMPLATE TABLET -->
+  <template id="filter-template-tablet">
+    <aside class="filter filter--horizontal">
+      <div class="filter__block">
+        <div class="filter__title">Подберите идеального попутчика</div>
+        <form class="filter__form-grid">
+
+          <div class="filter__section-title">ХОББИ:</div>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="hobby" value="sport" checked>
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Спортзал</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="hobby" value="hookah">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Кальян</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="hobby" value="sofa">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Диван</span>
+          </label>
+
+          <div class="filter__section-title">МУЗЫКА:</div>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="music" value="rock" checked>
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Тяжелый рок</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="music" value="rap">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Русский рэп</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="music" value="eurodance">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Евроденс</span>
+          </label>
+
+          <div class="filter__section-title">ЕДА:</div>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="food" value="meat" checked>
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Мясоед</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="food" value="pp">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Сидит на ПП</span>
+          </label>
+          <label class="checkbox filter__cell">
+            <input class="checkbox__input" type="checkbox" name="food" value="vegan">
+            <span class="checkbox__checkmark"></span>
+            <span class="checkbox__label">Веган-сыроед</span>
+          </label>
+
+          <div class="filter__section-title">ТРАНСПОРТ:</div>
+          <div class="filter__cell filter__cell--transport" colspan="3">
+            <div class="filter__transport-options">
+              <div class="filter__transport-option selected" data-type="plane">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-plane"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="car">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-car"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="bike">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-bike"></use>
+                </svg>
+              </div>
+              <div class="filter__transport-option" data-type="walk">
+                <svg class="filter__transport-icon">
+                  <use xlink:href="#icon-walk"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter__section-title">ЛЕВЕЛ:</div>
+          <div class="filter__cell filter__cell--level" colspan="3">
+            <div class="filter__level-row">
+              <div id="levelSlider"></div>
+              <div class="filter__range-row">
+                <input type="number" id="levelMinInput" min="0" max="100" value="30" class="filter__range-input">
+                <span class="filter__range-separator">—</span>
+                <input type="number" id="levelMaxInput" min="0" max="100" value="100" class="filter__range-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="filter__button-row" colspan="4">
+            <button class="filter__button" type="button">ПОКАЗАТЬ</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </template>
+
+  <!-- SVG-спрайт для иконок транспорта -->
+  <svg style="display:none;">
+    <symbol id="icon-plane" viewBox="0 0 24 24">
+      <image href="/vangogh-link-test-layout-strong/images/icons/icon_plane.svg" width="24" height="24" />
+    </symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24">
+      <image href="/vangogh-link-test-layout-strong/images/icons/icon_bus.svg" width="24" height="24" />
+    </symbol>
+    <symbol id="icon-bike" viewBox="0 0 24 24">
+      <image href="/vangogh-link-test-layout-strong/images/icons/icon_bicycle.svg" width="24" height="24" />
+    </symbol>
+    <symbol id="icon-walk" viewBox="0 0 24 24">
+      <image href="/vangogh-link-test-layout-strong/images/icons/icon_run.svg" width="24" height="24" />
+    </symbol>
+  </svg>
+</body>
+
+</html>
