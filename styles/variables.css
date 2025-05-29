@@ -1,0 +1,35 @@
+:root {
+  --font-family-base: 'Blogger Sans', sans-serif;
+  --font-family-inter: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --font-weight-supabold: 700;
+
+  --color-yellow: #ffe066;
+  --color-yellow-dark: #ffd74b;
+  --color-blue: #1d2e5b;
+  --color-blue-light: #4b5563;
+  --color-white: #fff;
+  --color-bg: #EDEFF6;
+  --color-black: #000000;
+  --color-blue-background: #1d2e5b43;
+  --color-green: #81e31e;
+  --color-heart: #f97676;
+
+  --border-radius: 24px;
+  --card-radius: 20px;
+  --transition: 0.2s;
+
+  --container-max-width: 1440px;
+  --container-padding: 0 60px 0 60px;
+  --container-padding-tablet: 0 40px 0 40px;
+  --container-padding-mobile: 0 25px 0 25px;
+}
+
+.traveler__transport-icon svg,
+.filter__transport-icon {
+  width: 24px;
+  height: 24px;
+}

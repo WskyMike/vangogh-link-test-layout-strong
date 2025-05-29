@@ -1,0 +1,208 @@
+.traveler {
+  display: flex;
+  background: var(--color-white);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  max-height: 285px;
+  max-width: 94%;
+}
+
+.traveler__photo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.traveler__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.traveler__info {
+  flex: 1 1 auto;
+  padding: 40px 20px 20px 37px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 12%;
+}
+
+.traveler__top-row {
+  display: flex;
+}
+
+.traveler__identity {
+  display: flex;
+  flex-direction: column;
+  max-width: 47%;
+}
+
+.traveler__name::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-heart);
+  margin-right: 18px;
+  vertical-align: middle;
+}
+
+.traveler__name--blue::before {
+  background: var(--color-blue);
+}
+.traveler__name--heart::before {
+  background: var(--color-heart);
+}
+.traveler__name--green::before {
+  background: var(--color-green);
+}
+
+.traveler__name {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.traveler__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px 14px 25px;
+}
+
+.traveler__tag {
+  font-size: 20px;
+  color: var(--color-black);
+  font-weight: 400;
+  padding-right: 3px;
+  line-height: 23px;
+  margin-right: 3px;
+}
+
+.traveler__tag::before {
+  content: '#';
+}
+
+.traveler__destinations {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 11px;
+  padding-left: 67px;
+}
+
+.traveler__destination {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 18px;
+}
+
+.traveler__flag {
+  width: 35px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.traveler__bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  justify-content: space-between;
+  padding: 0 4% 0 3%;
+}
+
+.traveler__bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+}
+
+.traveler__bottom-left {
+  display: flex;
+  align-items: center;
+}
+
+.traveler__transport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.traveler__transport-icon {
+  font-size: 24px;
+  opacity: 0.2;
+}
+
+.traveler__transport-icon_active {
+  opacity: 1;
+  color: var(--color-blue);
+}
+
+.traveler__level {
+  /* margin-left: 44px;
+  margin-right: 22px; */
+}
+
+.traveler__invite-button {
+  background-color: var(--color-yellow-dark);
+  border: none;
+  border-radius: 25px;
+  padding: 0 30px;
+  font-size: 20px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  width: fit-content;
+  transition:
+    background-color var(--transition),
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.traveler__invite-button:active {
+  transform: scale(0.96);
+  opacity: 0.8;
+}
+
+.traveler__likes {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.traveler__likes-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding-top: 3px;
+  transition:
+    transform 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+.traveler__likes-button:active {
+  transform: scale(0.92);
+  opacity: 0.7;
+}
+
+.traveler__likes-count {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 770px) {
+  .traveler {
+    max-width: 100%;
+  }
+}

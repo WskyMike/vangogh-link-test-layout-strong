@@ -1,0 +1,30 @@
+{
+  "name": "vangogh-link-test-layout-2",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js,.html,.css",
+    "format": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/css": "^0.7.0",
+    "@rollup/rollup-win32-x64-msvc": "^4.40.2",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-html": "^8.1.2",
+    "eslint-plugin-prettier": "^5.4.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "nouislider": "^15.8.1"
+  }
+}

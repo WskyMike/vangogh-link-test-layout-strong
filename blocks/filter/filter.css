@@ -1,0 +1,286 @@
+.filter {
+  max-width: 286px;
+  flex-shrink: 0;
+}
+
+.filter__block {
+  background: var(--color-yellow-dark);
+  border-radius: var(--card-radius);
+  padding: 42px 51px 10px 44px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__title {
+  font-size: 30px;
+  font-weight: var(--font-weight-supabold);
+  margin-bottom: 32px;
+  color: var(--color-blue);
+  line-height: 31px;
+}
+
+.filter__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.filter__section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.filter__section-title::after {
+  content: '▼';
+  font-size: 12px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.filter__section-title.filter__section-title--open::after {
+  transform: rotate(180deg);
+}
+
+.filter__dropdown-content {
+  padding: 5px 0;
+}
+
+.filter__checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.filter__transport-group {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 0 0;
+}
+
+.filter__transport-options {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.filter__transport-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.filter__transport-option.selected .filter__transport-icon {
+  opacity: 1;
+}
+
+.filter__transport-icon {
+  opacity: 0.2;
+  transition: opacity var(--transition);
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* --- СТИЛИ ДЛЯ NUISLIDER "ЛЕВЕЛ" --- */
+#levelSlider {
+  width: 100%;
+  height: 4px;
+  background: var(--color-blue-background);
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
+  margin-top: 40px;
+  position: relative;
+}
+
+#levelSlider .noUi-base {
+  height: 4px;
+}
+
+#levelSlider .noUi-connect {
+  background: var(--color-blue);
+}
+
+#levelSlider .noUi-handle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  border: none;
+  box-shadow: none;
+  top: -6px;
+  right: -9px;
+  cursor: pointer;
+}
+
+#levelSlider .noUi-handle:before,
+#levelSlider .noUi-handle:after {
+  display: none;
+}
+
+/* Убираем стрелки в Chrome, Safari, Edge */
+.filter__range-row input[type='number']::-webkit-outer-spin-button,
+.filter__range-row input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Убираем стрелки в Firefox */
+.filter__range-row input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.filter__range-row {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #cbced9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.filter__range-row span {
+  font-size: 32px;
+  color: #bdbdbd;
+  font-weight: 400;
+  user-select: none;
+  line-height: 1;
+}
+
+.filter__range-input {
+  border: none;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-blue);
+  background: transparent;
+  width: 80px;
+  text-align: center;
+  outline: none;
+  transition: border 0.2s;
+  box-shadow: none;
+}
+
+.filter__range-input:focus {
+  border: none;
+}
+
+.filter__range-separator {
+  font-size: 28px;
+  color: #bdbdbd;
+  user-select: none;
+  line-height: 1;
+}
+
+.filter__button {
+  margin: 22px 0 30px 0;
+  display: inline-block;
+  padding: 14px 0;
+  background: var(--color-white);
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: var(--font-weight-supabold);
+  cursor: pointer;
+  transition: background-color var(--transition);
+  text-align: center;
+}
+
+.filter__button:hover {
+  background-color: var(--color-yellow);
+}
+
+@media (max-width: 770px) {
+  .filter {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .filter {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .filter__title {
+    font-size: 22px;
+  }
+
+  .filter__section {
+    margin-bottom: 18px;
+    gap: 0px;
+  }
+
+  .filter__section-title {
+    font-size: 16px;
+  }
+
+  .filter__block {
+    padding: 23px 25px 8px 25px;
+  }
+
+  .filter__title {
+    line-height: 22px;
+    margin-bottom: 35px;
+  }
+
+  .filter__dropdown-content {
+    padding-top: 18px;
+  }
+
+  .filter__transport-options {
+    gap: 3px;
+  }
+
+  .filter__transport-option {
+    width: 30px;
+    height: 30px;
+  }
+
+  .filter__range-input {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  .filter__range-row {
+    margin-top: 2px;
+    max-width: 212px;
+  }
+
+  #levelSlider {
+    max-width: 212px;
+    width: 100%;
+    min-width: 80px;
+    height: 2px;
+    margin-top: 25px;
+  }
+
+  #levelSlider .noUi-base {
+    height: 2px;
+  }
+
+  #levelSlider .noUi-handle {
+    width: 10px;
+    height: 10px;
+    top: -4px;
+  }
+
+  .filter__button {
+    font-size: 17px;
+    padding: 10px 0;
+    margin: 2px -4px 19px -5px;
+  }
+}
